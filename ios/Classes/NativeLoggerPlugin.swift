@@ -11,7 +11,7 @@ public class NativeLoggerPlugin: NSObject, FlutterPlugin {
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     if call.method == "log", let args = call.arguments as? [String: Any],
        let message = args["message"] as? String {
-      NSLog("Flutter NSLog: %@", message)
+      NSLog("%@", message)
       result(nil)
     } else {
       result(FlutterMethodNotImplemented)
